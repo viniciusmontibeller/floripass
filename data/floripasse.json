@@ -27,7 +27,7 @@
   ],
   "atracoes": [
     {
-      "id": "atracao_001",
+      "id": "atracao_000",
       "nome": "Nome da atração",
       "categoria": "Categoria",
       "bairro": "Nome do bairro",
@@ -56,6 +56,140 @@
         "email": "contato@email.com",
         "telefone": "+55 48 0000-0000",
         "whatsapp": "+55 48 99999-9999"
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+      
+    },
+    {
+      "id": "atracao_001",
+      "nome": "Palácio Cruz e Sousa",
+      "categoria": "Museu / Patrimônio Histórico",
+      "bairro": "Centro",
+      "thumbnail": "https://vaconferir.com.br/wp-content/uploads/2014/04/DSC07047-Medium-1024x768.jpg",
+      "imagens": [
+        "https://vaconferir.com.br/wp-content/uploads/2014/04/DSC07028-Medium-1024x768.jpg",
+        "https://imgmd.net/images/v1/guia/1678420/palacio-cruz-e-souza.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=TfzwL_BML6I"
+      ],
+      "descricao": "O Palácio Cruz e Sousa é um dos principais patrimônios históricos de Florianópolis, localizado na Praça XV de Novembro. Construído no século XVIII e remodelado no século XIX, já foi sede do governo estadual e hoje abriga o Museu Histórico de Santa Catarina. Seu nome homenageia o poeta simbolista Cruz e Sousa, natural do estado. O edifício se destaca pela arquitetura eclética e por seu acervo que retrata a história política e cultural catarinense.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["terca", "quarta", "quinta", "sexta"],
+          "abre": "10:00",
+          "fecha": "18:00"
+        },
+        {
+          "dias": ["sabado", "domingo"],
+          "abre": "10:00",
+          "fecha": "16:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Praça XV de Novembro, s/n - Centro, Florianópolis - SC",
+        "bairro": "Centro",
+        "cidade": "Florianópolis",
+        "cep": "88010-400"
+      },
+      "localizacao": {
+        "latitude": -27.596650581030588,
+        "longitude": -48.549936802161916
+      },
+      "contato": {
+        "email": "mhsc@fcc.sc.gov.br",
+        "telefone": "+55 48 3665-6363",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": true,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_002",
+      "nome": "Catedral Metropolitana de Florianópolis",
+      "categoria": "Igreja / Patrimônio Histórico",
+      "bairro": "Centro",
+      "thumbnail": "https://vamosporai.com/wp-content/uploads/2017/10/Igreja-Florianopolis.jpg",
+      "imagens": [
+        "https://tourb.com.br/img/lugares/florianopolis/catedral-metropolitana-de-florianopolis-2.jpg",
+        "https://www.iheartbrazil.com/wp-content/uploads/2020/10/e-florianopolis-metropolitan-cathedral.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/shorts/9d6VHLEbBBo"
+      ],
+      "descricao": "A Catedral Metropolitana de Florianópolis, dedicada a Nossa Senhora do Desterro, é um dos marcos históricos e religiosos mais importantes da cidade. Localizada no centro, próxima à Praça XV de Novembro, sua construção teve início no século XVIII. O templo apresenta estilo arquitetônico neoclássico e abriga obras de arte sacra, vitrais e um órgão de tubos tradicional. É um importante ponto turístico e também centro de celebrações religiosas da capital catarinense.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["segunda", "terca", "quarta", "quinta", "sexta"],
+          "abre": "07:30",
+          "fecha": "18:30"
+        },
+        {
+          "dias": ["sabado", "domingo"],
+          "abre": "07:30",
+          "fecha": "20:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Praça XV de Novembro, s/n - Centro, Florianópolis - SC",
+        "bairro": "Centro",
+        "cidade": "Florianópolis",
+        "cep": "88010-400"
+      },
+      "localizacao": { 
+        "latitude": -27.59613451567905,
+        "longitude": -48.54922263099746
+      },
+      "contato": {
+        "email": "secretaria@catedralflorianopolis.org.br",
+        "telefone": "+55 48 3224-3357",
+        "whatsapp": "48 99114-9448"
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_003",
+      "nome": "Praia dos Ingleses",
+      "categoria": "Praia",
+      "bairro": "Ingleses",
+      "thumbnail": "https://www.viagensecaminhos.com/wp-content/uploads/2011/02/florianopolis-praia-ingleses.jpg",
+      "imagens": [
+        "https://3.bp.blogspot.com/-Ug47JsEensQ/UMY7LbQj1WI/AAAAAAAAAAU/qcYwlzcvaIU/s1600/praia-dos-ingleses-floripa.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-s/06/fc/9c/da/praia-dos-ingleses.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=vxByPlgazGI"
+      ],
+      "descricao": "A Praia dos Ingleses é uma das mais populares de Florianópolis, localizada no norte da ilha. Conhecida por sua ampla faixa de areia e águas claras, é muito procurada por turistas durante o verão. A praia possui boa infraestrutura, com restaurantes, bares, hotéis e comércio variado. No canto sul, as águas são mais calmas, ideais para banho, enquanto no canto norte há ondas mais fortes, atraindo surfistas. Também é famosa pelas dunas, utilizadas para a prática de sandboard.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"],
+          "abre": "00:00",
+          "fecha": "23:59"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Praia dos Ingleses - Ingleses, Florianópolis - SC",
+        "bairro": "Ingleses",
+        "cidade": "Florianópolis",
+        "cep": "88058-000"
+      },
+      "localizacao": {
+        "latitude": -27.43569789053739,
+        "longitude": -48.389389641791524
+      },
+      "contato": {
+        "email": "",
+        "telefone": "",
+        "whatsapp": ""
       },
       "reserva": {
         "obrigatoria": false,
