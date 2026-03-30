@@ -1,0 +1,334 @@
+{
+  "home": {
+    "midiasDestaque": []
+  },
+  "passes": [
+    {
+      "id": "basico",
+      "nome": "Básico",
+      "quantidadeAtracoes": 3,
+      "validadeDias": 3,
+      "preco": 89
+    },
+    {
+      "id": "plus",
+      "nome": "Plus",
+      "quantidadeAtracoes": 5,
+      "validadeDias": 5,
+      "preco": 149
+    },
+    {
+      "id": "top",
+      "nome": "Top",
+      "quantidadeAtracoes": 7,
+      "validadeDias": 7,
+      "preco": 199
+    }
+  ],
+  "atracoes": [
+    {
+      "id": "atracao_001",
+      "nome": "Casa da Alfândega",
+      "categoria": "Centro cultural / artesanato",
+      "bairro": "Centro",
+      "thumbnail": "",
+      "imagens": [],
+      "videos": [],
+      "descricao": "Prédio histórico do centro de Florianópolis, conhecido pela feira permanente de artesanato catarinense.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["segunda", "terca", "quarta", "quinta", "sexta"],
+          "abre": "09:00",
+          "fecha": "18:30"
+        },
+        {
+          "dias": ["sabado", "domingo"],
+          "abre": "09:00",
+          "fecha": "13:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Rua Conselheiro Mafra, 141 - Centro, Florianópolis - SC, 88010-100",
+        "bairro": "Centro",
+        "cidade": "Florianópolis",
+        "cep": "88010-100"
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "",
+        "telefone": "",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_002",
+      "nome": "Fortaleza de São José da Ponta Grossa",
+      "categoria": "Fortaleza / patrimônio histórico",
+      "bairro": "Praia do Forte",
+      "thumbnail": "",
+      "imagens": [],
+      "videos": [],
+      "descricao": "Fortaleza do século XVIII, um dos principais monumentos históricos da Ilha de Santa Catarina.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"],
+          "abre": "08:30",
+          "fecha": "18:30"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Praia do Forte - Fortaleza de São José da Ponta Grossa, Florianópolis - SC",
+        "bairro": "Praia do Forte",
+        "cidade": "Florianópolis",
+        "cep": ""
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "fortalezas@contato.ufsc.br",
+        "telefone": "(48) 3721-8302",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_003",
+      "nome": "Museu de Arqueologia e Etnologia da UFSC (MArquE)",
+      "categoria": "Museu / arqueologia e etnologia",
+      "bairro": "Trindade",
+      "thumbnail": "",
+      "imagens": [],
+      "videos": [],
+      "descricao": "Museu universitário com acervos de arqueologia pré-colonial e histórica, etnologia indígena e coleção ligada a Franklin Cascaes.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["terca", "quarta", "quinta", "sexta"],
+          "abre": "07:00",
+          "fecha": "19:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Campus Universitário Reitor João David Ferreira Lima, s/n - Trindade, Florianópolis - SC, 88040-900",
+        "bairro": "Trindade",
+        "cidade": "Florianópolis",
+        "cep": "88040-900"
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "marque@contato.ufsc.br",
+        "telefone": "(48) 3721-9325",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_004",
+      "nome": "Museu de Arte de Santa Catarina (MASC)",
+      "categoria": "Museu / arte",
+      "bairro": "Agronômica",
+      "thumbnail": "",
+      "imagens": [],
+      "videos": [],
+      "descricao": "Museu de arte com acervo importante de artistas catarinenses e brasileiros, localizado no CIC.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["segunda", "terca", "quarta", "quinta", "sexta"],
+          "abre": "13:00",
+          "fecha": "19:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Avenida Governador Irineu Bornhausen, 5600 - Agronômica, Florianópolis - SC",
+        "bairro": "Agronômica",
+        "cidade": "Florianópolis",
+        "cep": ""
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "masc@fcc.sc.gov.br",
+        "telefone": "(48) 3664-2631",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_005",
+      "nome": "Museu Histórico de Santa Catarina - Palácio Cruz e Sousa",
+      "categoria": "Museu / história",
+      "bairro": "Centro",
+      "thumbnail": "",
+      "imagens": [],
+      "videos": [],
+      "descricao": "Museu histórico instalado no Palácio Cruz e Sousa, no centro histórico de Florianópolis.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["terca", "quarta", "quinta", "sexta"],
+          "abre": "10:00",
+          "fecha": "18:00"
+        },
+        {
+          "dias": ["sabado", "domingo", "feriado"],
+          "abre": "10:00",
+          "fecha": "16:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Praça XV de Novembro, 227 - Centro, Florianópolis - SC, 88010-400",
+        "bairro": "Centro",
+        "cidade": "Florianópolis",
+        "cep": "88010-400"
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "mhsc@fcc.sc.gov.br",
+        "telefone": "(48) 3665-6363",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_006",
+      "nome": "Museu Victor Meirelles",
+      "categoria": "Museu / arte e casa histórica",
+      "bairro": "Centro",
+      "thumbnail": "",
+      "imagens": [],
+      "videos": [],
+      "descricao": "Museu instalado na casa natal de Victor Meirelles, preservando a memória do artista catarinense do século XIX.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["terca", "quarta", "quinta", "sexta"],
+          "abre": "10:00",
+          "fecha": "18:00"
+        },
+        {
+          "dias": ["sabado"],
+          "abre": "10:00",
+          "fecha": "15:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Rua Victor Meirelles, 59 - Centro, Florianópolis - SC, 88010-440",
+        "bairro": "Centro",
+        "cidade": "Florianópolis",
+        "cep": "88010-440"
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "mvm@museus.gov.br",
+        "telefone": "(48) 99645-0167",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_007",
+      "nome": "Planetário da UFSC",
+      "categoria": "Planetário / ciência",
+      "bairro": "Trindade",
+      "thumbnail": "",
+      "imagens": [],
+      "videos": [],
+      "descricao": "Espaço de divulgação científica com sessões de planetário e atividades de observação astronômica.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["quarta"],
+          "abre": "18:30",
+          "fecha": "21:30"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Centro de Filosofia e Ciências Humanas, UFSC - Trindade, Florianópolis - SC, 88040-900",
+        "bairro": "Trindade",
+        "cidade": "Florianópolis",
+        "cep": "88040-900"
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "planetar@cfh.ufsc.br",
+        "telefone": "(48) 3721-4133",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+    },
+    {
+      "id": "atracao_008",
+      "nome": "Projeto TAMAR Florianópolis",
+      "categoria": "Centro de visitantes / educação ambiental",
+      "bairro": "Barra da Lagoa",
+      "thumbnail": "",
+      "imagens": [],
+      "videos": [],
+      "descricao": "Centro de visitantes voltado à conservação de tartarugas marinhas, com visitação educativa e tanques de observação.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["quarta", "quinta", "sexta", "sabado", "domingo", "segunda"],
+          "abre": "09:30",
+          "fecha": "17:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Rua Professor Ademir Francisco, s/n - Barra da Lagoa, Florianópolis - SC",
+        "bairro": "Barra da Lagoa",
+        "cidade": "Florianópolis",
+        "cep": ""
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "tamarsul@tamar.org.br",
+        "telefone": "(48) 3236-2015",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": "",
+        "observacao": "Grupos, escolas e instituições precisam de agendamento prévio."
+      }
+    }
+  ]
+}
