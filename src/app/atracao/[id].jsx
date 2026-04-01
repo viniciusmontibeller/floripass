@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Image, Button } from 'react-native'
 import React from 'react'
 import { useLocalSearchParams } from 'expo-router'
 import data from '../../../data/floripasse.json'
@@ -23,6 +23,8 @@ export default function AtracaoDetalhes() {
             <Text>Endereço: {atracao.endereco.enderecoCompleto} - {atracao.endereco.cep}</Text>
             <Text>Email - {atracao.contato.email} </Text>
             <Text>Contato - {atracao.contato.telefone} </Text>
+            { atracao.reserva.obrigatoria && <Button title='Realizar reserva' /> }
+            <Button title='Adicionar como favorito' />
         </ScrollView>
     );
 }

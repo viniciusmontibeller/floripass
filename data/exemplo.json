@@ -67,7 +67,12 @@
         "url": ""
       }
     },
-    {
+    {: "Fortaleza do século XVIII, um dos principais monumentos históricos da Ilha de Santa Catarina.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"],
+          "abre": "08:30",
+          "fecha"
       "id": "atracao_002",
       "nome": "Fortaleza de São José da Ponta Grossa",
       "categoria": "Fortaleza / patrimônio histórico",
@@ -102,7 +107,7 @@
         "obrigatoria": false,
         "url": ""
       }
-    },
+    }, const [loading, setLoading] = useState()
     {
       "id": "atracao_003",
       "nome": "Museu de Arqueologia e Etnologia da UFSC (MArquE)",
@@ -217,7 +222,7 @@
       }
     },
     {
-      "id": "atracao_006",
+      "id": "atr const [loading, setLoading] = useState()acao_006",
       "nome": "Museu Victor Meirelles",
       "categoria": "Museu / arte e casa histórica",
       "bairro": "Centro",

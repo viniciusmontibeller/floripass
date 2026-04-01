@@ -9,6 +9,7 @@ export default function ListaAtracoes() {
   return (
     <View>
       <FlatList
+        styles={styles.container}
         data={data.atracoes}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <AtracaoCard atracao={item} />}

@@ -1,28 +1,30 @@
 import { Pressable, StyleSheet, Text, View, ImageBackground } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
+import { BottomTabBarHeightCallbackContext } from '@react-navigation/bottom-tabs';
 
 export default function AtracaoCard({ atracao }) {
     const { id, nome, bairro, thumbnail } = atracao
 
     return (
-        <View>
+        <View style={styles.contianer}>
             <Link
                 asChild
                 href={`/atracao/${id}`}
             >
-                <Pressable>
+                <Pressable style={styles.card}>
                     <ImageBackground
                         source={{ uri: thumbnail }}
                         style={{
                             height: 180,
                             width: '100%',
                             justifyContent: 'flex-end',
-                            padding: 12,
                         }}
                     >
-                        <Text>{nome}</Text>
-                        <Text>{bairro}</Text>
+                        <View style={styles.textArea}>
+                            <Text style={styles.text}>{nome}</Text>
+                            <Text style={styles.text}>{bairro}</Text>
+                        </View>
                     </ImageBackground>
                 </Pressable>
             </Link>
@@ -30,4 +32,17 @@ export default function AtracaoCard({ atracao }) {
     );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    card: {
+        margin: 10,
+        borderRadius: 10,
+        overflow: 'hidden'
+    },
+    textArea: {
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        padding: 15,
+    },
+    text: {
+        color: 'white'
+    }
+})
