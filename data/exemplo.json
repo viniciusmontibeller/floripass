@@ -332,3 +332,219 @@
     }
   ]
 }
+
+// Exemplo
+/*
+
+{
+      "id": "atracao_000",
+      "nome": "Nome da atração",
+      "categoria": "Categoria",
+      "bairro": "Nome do bairro",
+      "thumbnail": "https://...",
+      "imagens": ["https://...", "https://..."],
+      "videos": ["https://..."],
+      "descricao": "Texto descritivo da atração.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["segunda", "terca", "quarta"],
+          "abre": "09:00",
+          "fecha": "18:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Rua X, 123 - Bairro, Florianópolis",
+        "bairro": "Nome do bairro",
+        "cidade": "Florianópolis",
+        "cep": "88000-000"
+      },
+      "localizacao": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contato": {
+        "email": "contato@email.com",
+        "telefone": "+55 48 0000-0000",
+        "whatsapp": "+55 48 99999-9999"
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": ""
+      }
+      
+    },
+
+{
+  "home": {
+    "titulo": "Descubra Florianópolis com o FloriPasse",
+    "subtitulo": "Escolha atrações, monte seu roteiro e aproveite a viagem.",
+    "midiasDestaque": [
+      {
+        "id": "midia_001",
+        "tipo": "imagem",
+        "url": "https://exemplo.com/home/1.jpg",
+        "titulo": "Centro Histórico"
+      },
+      {
+        "id": "midia_002",
+        "tipo": "imagem",
+        "url": "https://exemplo.com/home/2.jpg",
+        "titulo": "Lagoa da Conceição"
+      },
+      {
+        "id": "midia_003",
+        "tipo": "video",
+        "url": "https://www.youtube.com/watch?v=abc123",
+        "titulo": "Vídeo institucional"
+      }
+    ]
+  },
+  "passes": [
+    {
+      "id": "basico",
+      "nome": "Básico",
+      "quantidadeAtracoes": 3,
+      "validadeDias": 3,
+      "preco": 89,
+      "descricao": "Permite visitar até 3 atrações em 3 dias corridos."
+    },
+    {
+      "id": "plus",
+      "nome": "Plus",
+      "quantidadeAtracoes": 5,
+      "validadeDias": 5,
+      "preco": 149,
+      "descricao": "Permite visitar até 5 atrações em 5 dias corridos."
+    },
+    {
+      "id": "top",
+      "nome": "Top",
+      "quantidadeAtracoes": 7,
+      "validadeDias": 7,
+      "preco": 199,
+      "descricao": "Permite visitar até 7 atrações em 7 dias corridos."
+    }
+  ],
+  "atracoes": [
+    {
+      "id": "atracao_001",
+      "nome": "Projeto Tamar Florianópolis",
+      "slug": "projeto-tamar-florianopolis",
+      "categoria": "Museu / Educação Ambiental",
+      "bairro": "Barra da Lagoa",
+      "thumbnail": "https://exemplo.com/thumbs/tamar.jpg",
+      "galeria": [
+        {
+          "id": "img_001",
+          "tipo": "imagem",
+          "url": "https://exemplo.com/images/tamar-1.jpg"
+        },
+        {
+          "id": "img_002",
+          "tipo": "imagem",
+          "url": "https://exemplo.com/images/tamar-2.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_001",
+          "tipo": "youtube",
+          "url": "https://www.youtube.com/watch?v=video1",
+          "thumbnail": "https://img.youtube.com/vi/video1/hqdefault.jpg"
+        }
+      ],
+      "descricao": "Espaço de conservação marinha com foco em tartarugas e educação ambiental.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["segunda", "terca", "quarta", "quinta", "sexta"],
+          "abre": "09:00",
+          "fecha": "18:00"
+        },
+        {
+          "dias": ["sabado", "domingo"],
+          "abre": "10:00",
+          "fecha": "18:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Rua Exemplo, 123 - Barra da Lagoa, Florianópolis",
+        "bairro": "Barra da Lagoa",
+        "cidade": "Florianópolis",
+        "cep": "88000-000"
+      },
+      "localizacao": {
+        "latitude": -27.574,
+        "longitude": -48.434
+      },
+      "contato": {
+        "email": "contato@exemplo.com",
+        "telefone": "+55 48 3333-3333",
+        "whatsapp": "+55 48 99999-9999"
+      },
+      "reserva": {
+        "obrigatoria": true,
+        "url": "https://exemplo.com/reservas",
+        "textoBotao": "Efetuar reserva"
+      }
+    },
+    {
+      "id": "atracao_002",
+      "nome": "Fortaleza de São José da Ponta Grossa",
+      "slug": "fortaleza-sao-jose-ponta-grossa",
+      "categoria": "Local Histórico",
+      "bairro": "Praia do Forte",
+      "thumbnail": "https://exemplo.com/thumbs/fortaleza.jpg",
+      "galeria": [
+        {
+          "id": "img_003",
+          "tipo": "imagem",
+          "url": "https://exemplo.com/images/fortaleza-1.jpg"
+        },
+        {
+          "id": "img_004",
+          "tipo": "imagem",
+          "url": "https://exemplo.com/images/fortaleza-2.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_002",
+          "tipo": "youtube",
+          "url": "https://www.youtube.com/watch?v=video2",
+          "thumbnail": "https://img.youtube.com/vi/video2/hqdefault.jpg"
+        }
+      ],
+      "descricao": "Construção histórica com vista para o mar e relevância militar e cultural.",
+      "horariosFuncionamento": [
+        {
+          "dias": ["terca", "quarta", "quinta", "sexta", "sabado", "domingo"],
+          "abre": "10:00",
+          "fecha": "17:00"
+        }
+      ],
+      "endereco": {
+        "enderecoCompleto": "Praia do Forte, Florianópolis",
+        "bairro": "Praia do Forte",
+        "cidade": "Florianópolis",
+        "cep": "88056-000"
+      },
+      "localizacao": {
+        "latitude": -27.429,
+        "longitude": -48.523
+      },
+      "contato": {
+        "email": "fortaleza@exemplo.com",
+        "telefone": "+55 48 3222-2222",
+        "whatsapp": ""
+      },
+      "reserva": {
+        "obrigatoria": false,
+        "url": "",
+        "textoBotao": ""
+      }
+    }
+  ]
+}
+*/
+
+/* 

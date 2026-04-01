@@ -1,4 +1,5 @@
-import { Text, View } from "react-native";
+import { Text, View, Button, StyleSheet } from "react-native";
+import { Link } from "expo-router";
 
 export default function Home() {
   return (
@@ -9,7 +10,12 @@ export default function Home() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Home</Text>
+      <View>
+        <Link href="/ListaAtracoes" >Atrações</Link>
+      </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({})
