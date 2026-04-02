@@ -1,6 +1,10 @@
 {
-  "home": {
-    "midiasDestaque": []
+  "carrosel": {
+    "midiasDestaque": [
+      {"id": 1, "url": "https://png.pngtree.com/png-clipart/20240308/original/pngtree-cat-eating-pizza-png-image_14546182.png"},
+      {"id": 2, "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTXy5QjcYOd_J7q5a_4hmIs7Nghe1OtG_fMg&s"},
+      {"id": 3, "url": "https://png.pngtree.com/png-clipart/20240308/original/pngtree-cat-eating-pizza-png-image_14546182.png"}
+    ]
   },
   "passes": [
     {
