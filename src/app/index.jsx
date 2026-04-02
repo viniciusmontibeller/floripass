@@ -91,17 +91,14 @@ const styles = StyleSheet.create({
     flex: 1,
     height:"100%"
   },
-
-overlay: {
-  flex: 1,
-  backgroundColor: "rgba(0,0,0,0.5)",
-  paddingHorizontal: 20,
-  justifyContent: "space-between", 
-  paddingBottom: 30,
-  overflow: "hidden"
-},
-
-
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.5)",
+    paddingHorizontal: 20,
+    justifyContent: "space-between", 
+    paddingBottom: 30,
+    overflow: "hidden"
+  },
   title: {
     fontSize: 28,
     fontWeight: "bold",
@@ -109,41 +106,34 @@ overlay: {
     textAlign: "center",
     marginTop: 10,
   },
-
   description: {
     fontSize: 16,
     color: "#ddd",
     textAlign: "center",
     marginVertical: 10,
   },
-
   carouselContainer: {
     height: 200,
     alignSelf: "center",
   },
-
   carouselWrapper: {
-  bottom: 120,
-  justifyContent: "center",
-},
-
-carouselImage: {
-  width: width * 0.9,     
-  height: 250,
-  borderRadius: 20,
-},
-
+    bottom: 120,
+    justifyContent: "center",
+  },
+  carouselImage: {
+    width: width * 0.9,     
+    height: 250,
+    borderRadius: 20,
+  },
   image: {
     width: width * 1,
     height: 200,
     borderRadius: 15,
     marginRight: 15,
   },
-
   navigationArea: {
     alignItems: "center",
   },
-
   button: {
     backgroundColor: "#6200ee",
     color: "#fff",
@@ -154,4 +144,7 @@ carouselImage: {
     fontWeight: "bold",
     overflow: "hidden",
   },
+  link: {
+    color: 'white',
+  }
 });
