@@ -1,9 +1,10 @@
 {
   "carrosel": {
     "midiasDestaque": [
-      {"id": 1, "url": "https://png.pngtree.com/png-clipart/20240308/original/pngtree-cat-eating-pizza-png-image_14546182.png"},
-      {"id": 2, "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTXy5QjcYOd_J7q5a_4hmIs7Nghe1OtG_fMg&s"},
-      {"id": 3, "url": "https://png.pngtree.com/png-clipart/20240308/original/pngtree-cat-eating-pizza-png-image_14546182.png"}
+      {"id": 1, "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/31/fe/2e/praca-xv-de-novembro.jpg?w=1200&h=-1&s=1"},
+      {"id": 2, "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMqYEj6oILC8f48VRwrTH8rMwuGHKI68wFtQ&s"},
+      {"id": 3, "url": "https://www.carpemundi.com.br/wp-content/uploads/2020/12/praia-mole-floripa.jpg"},
+      {"id": 4, "url": "https://s2-g1.glbimg.com/xVPrZAfwjrpC70xJXDG-k1JL2WI=/0x0:1024x682/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/c/1/js1ieJScALgDL44ao2Og/image2.jpg"}
     ]
   },
   "passes": [
