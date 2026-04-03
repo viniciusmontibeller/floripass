@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ScrollView, FlatList, Pressable } from 'react-native'
 import { useState } from 'react'
-import AtracaoCard from '../components/AtracaoCard'
-import data from '../../data/floripasse.json'
+import AtracaoCard from '../../components/AtracaoCard'
+import data from '../../../data/floripasse.json'
 
 export default function ListaAtracoes() {
   // const [loading, setLoading] = useState()

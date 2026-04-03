@@ -6,10 +6,8 @@ import {
   Dimensions,
   Image,  
 } from "react-native";
-import Carrossel from "../components/Carrossel";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
-import imagens from "../../data/floripasse.json";
 
 
 const width = Dimensions.get("window").width;
@@ -31,12 +29,6 @@ export default function Home() {
           Explore as melhores atrações, descubra novos lugares e aproveite experiências incríveis com Floripass.
         </Text>
 
-
-        <View style={styles.navigationArea}>
-          <Link href="/ListaAtracoes" style={styles.link}>
-            Ver Atrações
-          </Link>
-        </View>
 
       </SafeAreaView>
     </ImageBackground>
