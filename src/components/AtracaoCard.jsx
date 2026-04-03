@@ -1,7 +1,6 @@
 import { Pressable, StyleSheet, Text, View, ImageBackground } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
-import { BottomTabBarHeightCallbackContext } from '@react-navigation/bottom-tabs';
 
 export default function AtracaoCard({ atracao }) {
     const { id, nome, bairro, thumbnail } = atracao
