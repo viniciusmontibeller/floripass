@@ -4,41 +4,17 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
-  Image,
-  ScrollView,
-  
+  Image,  
 } from "react-native";
+import Carrossel from "../components/Carrossel";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
-import { useRef, useEffect, useState } from "react";
+import imagens from "../../data/floripasse.json";
 
-import images from "../../data/floripasse.json";
 
 const width = Dimensions.get("window").width;
 
 export default function Home() {
-  const carouselData = images.carrosel.midiasDestaque;
-
-// Referência para controlar o ScrollView (necessário para autoplay)
-  const scrollRef = useRef(null);
-  
-  const [index, setIndex] = useState(0);
-
-// Cria um intervalo que roda a cada 3 segundos
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const nextIndex = (index + 1) % carouselData.length;
-
-      scrollRef.current?.scrollTo({
-        x: nextIndex * (width * 0.9),
-        animated: true,
-      });
-
-      setIndex(nextIndex);//atualiza estado
-    }, 3000); // troca a cada 3 segundos
-
-    return () => clearInterval(interval); //limpa o intervalo
-  }, [index]);
 
   return (
     <ImageBackground
@@ -55,25 +31,6 @@ export default function Home() {
           Explore as melhores atrações, descubra novos lugares e aproveite experiências incríveis com Floripass.
         </Text>
 
-        <View style={ styles.carouselWrapper }>
-          <ScrollView
-            ref={scrollRef}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            scrollEnabled={true}
-            bounces={false}
-            overScrollMode="never"
-          >
-            {carouselData.map((item) => (
-              <Image
-                key={item.id}
-                source={{ uri: item.url }}
-                style={styles.carouselImage}
-              />
-            ))}
-          </ScrollView>
-        </View>
 
         <View style={styles.navigationArea}>
           <Link href="/ListaAtracoes" style={styles.link}>
@@ -116,15 +73,7 @@ const styles = StyleSheet.create({
     height: 200,
     alignSelf: "center",
   },
-  carouselWrapper: {
-    bottom: 120,
-    justifyContent: "center",
-  },
-  carouselImage: {
-    width: width * 0.9,     
-    height: 250,
-    borderRadius: 20,
-  },
+
   image: {
     width: width * 1,
     height: 200,

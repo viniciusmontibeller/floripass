@@ -4,7 +4,7 @@ import { getYoutubeVideoId } from '../../utils/getYoutubeVideoId'
 import { Platform } from 'react-native'
 import { Stack, useLocalSearchParams } from 'expo-router'
 import data from '../../../data/floripasse.json'
-
+import Carrossel from "../../components/Carrossel";
 
 export default function AtracaoDetalhes() {
     const { id } = useLocalSearchParams();
@@ -49,20 +49,8 @@ export default function AtracaoDetalhes() {
                     </View>
                 </View>
 
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.gallery}
-                >
-                    {atracao.imagens.map((imagem, index) => (
-                    <Image
-                        key={index}
-                        source={{ uri: imagem }}
-                        style={styles.galleryImage}
-                        resizeMode="cover"
-                    />
-                    ))}
-                </ScrollView>
+                <Carrossel data={atracao.imagens} /> 
+
 
                 <View style={styles.card}>
                     <Text Text style={styles.sectionTitle}>Sobre a atração</Text>

@@ -1,5 +1,5 @@
 {
-  "carrosel": {
+  "carrossel": {
     "midiasDestaque": [
       {"id": 1, "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/31/fe/2e/praca-xv-de-novembro.jpg?w=1200&h=-1&s=1"},
       {"id": 2, "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMqYEj6oILC8f48VRwrTH8rMwuGHKI68wFtQ&s"},
@@ -37,9 +37,9 @@
       "categoria": "Museu / Patrimônio Histórico",
       "bairro": "Centro",
       "thumbnail": "https://vaconferir.com.br/wp-content/uploads/2014/04/DSC07047-Medium-1024x768.jpg",
-      "imagens": [
-        "https://vaconferir.com.br/wp-content/uploads/2014/04/DSC07028-Medium-1024x768.jpg",
-        "https://imgmd.net/images/v1/guia/1678420/palacio-cruz-e-souza.jpg"
+      "imagens": [{"id":1, "url":"https://vaconferir.com.br/wp-content/uploads/2014/04/DSC07028-Medium-1024x768.jpg"},
+        {"id":2, "url":"https://imgmd.net/images/v1/guia/1678420/palacio-cruz-e-souza.jpg"},
+        {"id":3, "url":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/e8/ab/5a/20160910-140532-largejpg.jpg?w=1200&h=1200&s=1"}
       ],
       "videos": [
         "https://www.youtube.com/watch?v=TfzwL_BML6I"
@@ -79,15 +79,25 @@
     },
     {
       "id": "atracao_002",
-      "nome": "Catedral Metropolitana de Florianópolis",
+      "nome": "Passeio Guiado Catedral Metropolitana de Florianópolis + Praça XV",
       "categoria": "Igreja / Patrimônio Histórico",
       "bairro": "Centro",
       "thumbnail": "https://vamosporai.com/wp-content/uploads/2017/10/Igreja-Florianopolis.jpg",
       "imagens": [
-        "https://tourb.com.br/img/lugares/florianopolis/catedral-metropolitana-de-florianopolis-2.jpg",
-        "https://www.iheartbrazil.com/wp-content/uploads/2020/10/e-florianopolis-metropolitan-cathedral.jpg"
+        {
+          "id": 1,
+          "url": "https://tourb.com.br/img/lugares/florianopolis/catedral-metropolitana-de-florianopolis-2.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://www.iheartbrazil.com/wp-content/uploads/2020/10/e-florianopolis-metropolitan-cathedral.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.viagensecaminhos.com/wp-content/uploads/2017/08/centro-historico-florianopolis-sc.jpg"
+        }
       ],
-      "videos": [
+            "videos": [
         "https://www.youtube.com/shorts/9d6VHLEbBBo"
       ],
       "descricao": "A Catedral Metropolitana de Florianópolis, dedicada a Nossa Senhora do Desterro, é um dos marcos históricos e religiosos mais importantes da cidade. Localizada no centro, próxima à Praça XV de Novembro, sua construção teve início no século XVIII. O templo apresenta estilo arquitetônico neoclássico e abriga obras de arte sacra, vitrais e um órgão de tubos tradicional. É um importante ponto turístico e também centro de celebrações religiosas da capital catarinense.",
@@ -125,18 +135,32 @@
     },
     {
       "id": "atracao_003",
-      "nome": "Praia dos Ingleses",
+      "nome": "Passeio prais do Norte",
       "categoria": "Praia",
       "bairro": "Ingleses",
       "thumbnail": "https://www.viagensecaminhos.com/wp-content/uploads/2011/02/florianopolis-praia-ingleses.jpg",
       "imagens": [
-        "https://3.bp.blogspot.com/-Ug47JsEensQ/UMY7LbQj1WI/AAAAAAAAAAU/qcYwlzcvaIU/s1600/praia-dos-ingleses-floripa.jpg",
-        "https://media-cdn.tripadvisor.com/media/photo-s/06/fc/9c/da/praia-dos-ingleses.jpg"
+        {
+          "id": 1,
+          "url": "https://3.bp.blogspot.com/-Ug47JsEensQ/UMY7LbQj1WI/AAAAAAAAAAU/qcYwlzcvaIU/s1600/praia-dos-ingleses-floripa.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://media-cdn.tripadvisor.com/media/photo-s/06/fc/9c/da/praia-dos-ingleses.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.bossajurerehotel.com.br/wp-content/uploads/2020/12/Praia-do-Santinho-.jpg"
+        },
+        {
+          "id": 4,
+          "url": "https://floripa.com/wp-content/uploads/2025/05/1-1-1024x582.png"
+        }
       ],
       "videos": [
         "https://www.youtube.com/watch?v=vxByPlgazGI"
-      ],
-      "descricao": "A Praia dos Ingleses é uma das mais populares de Florianópolis, localizada no norte da ilha. Conhecida por sua ampla faixa de areia e águas claras, é muito procurada por turistas durante o verão. A praia possui boa infraestrutura, com restaurantes, bares, hotéis e comércio variado. No canto sul, as águas são mais calmas, ideais para banho, enquanto no canto norte há ondas mais fortes, atraindo surfistas. Também é famosa pelas dunas, utilizadas para a prática de sandboard.",
+      ], 
+      "descricao": "Passeio pelas praias mais populares do norte de Florianópolis. As praias do norte  são famosas pelas águas calmas, quentes e excelente infraestrutura ( com restaurantes, bares, hotéis e comércio variado) ideais para famílias e também pelas dunas, utilizadas para a prática de sandboard. Neste passeio passaremos por: Jurerê (Internacional e Tradicional), Daniela, Lagoinha do Norte e Santinho.",
       "horariosFuncionamento": [
         {
           "dias": ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"],
