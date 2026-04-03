@@ -2,23 +2,24 @@ import { StyleSheet, Text, View, ScrollView, Image, Button, Linking, Pressable }
 import YoutubePlayer from 'react-native-youtube-iframe';
 import { getYoutubeVideoId } from '../../utils/getYoutubeVideoId'
 import { Platform } from 'react-native'
+import { Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import { Stack, useLocalSearchParams } from 'expo-router'
 import data from '../../../data/floripasse.json'
 import Carrossel from "../../components/Carrossel";
+import CustomButton from '../../components/ui/CustomButton';
+import FavoriteButton from '../../components/ui/FavoriteButton';
+
 
 export default function AtracaoDetalhes() {
     const { id } = useLocalSearchParams();
     const atracao = data.atracoes.find((item) => String(item.id) == String(id));
 
     const { latitude, longitude } = atracao.localizacao
-
-    const youtubeUrl = atracao.videos[0];
-    const videoId = getYoutubeVideoId(youtubeUrl);
-
     const mapUrl = Platform.select({
         ios: `maps:0,0?q=${latitude}, ${longitude}`,
         android: `geo:0,0?q=${latitude}, ${longitude}`,
     });
+
 
     return (
         <>
@@ -35,33 +36,57 @@ export default function AtracaoDetalhes() {
                 contentContainerStyle={styles.content}
                 showsVerticalScrollIndicator={false}
             >
-                <Text style={styles.title}>{atracao.nome}</Text>
+                <View style={styles.titleRow}>
+                    <Text style={styles.title}>{atracao.nome}</Text>
+
+                    <FavoriteButton
+
+                    />
+                </View>
 
                 <View style={styles.badgesRow}>
                     <View style={styles.badge}>
+                        <Ionicons name="location-outline" size={14} color="#2563EB" />
                         <Text style={styles.badgeText}>{atracao.bairro}</Text>
                     </View>
 
-                    <View style={[styles.badge, styles.badgeHighlight]}>
-                        <Text style={[styles.badgeText, styles.badgeHighlightText]}>
-                            Reserva obrigatória
-                        </Text>
-                    </View>
+                    {atracao.reserva.obrigatoria && (
+                        <View style={[styles.badge, styles.badgeHighlight]}>
+                            <Ionicons name="ticket-outline" size={14} color="#B45309" />
+                            <Text style={[styles.badgeText, styles.badgeHighlightText]}>
+                                Reserva obrigatória
+                            </Text>
+                        </View>
+                    )}
                 </View>
 
-                <Carrossel data={atracao.imagens} /> 
-
+                <View style={[styles.gallery, styles.sectionSpacing]}>  
+                    <Carrossel data={atracao.imagens} /> 
+                </View>
 
                 <View style={styles.card}>
-                    <Text Text style={styles.sectionTitle}>Sobre a atração</Text>
+                    <Text Text style={styles.sectionTitle}>Sobre</Text>
                     <Text style={styles.description}>{atracao.descricao}</Text>
                 </View>
 
                 <View style={styles.card}>
                     <Text style={styles.sectionTitle}>Vídeos</Text>
-                    <View style={styles.videoWrapper}>
-                        <YoutubePlayer height={220} play={false} videoId={videoId} />
-                    </View>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.gallery}
+                        nestedScrollEnabled
+                    >
+                        {atracao.videos.map((videoUrl, index) => {
+                            const videoId = getYoutubeVideoId(videoUrl)
+
+                            return (
+                                <View key={index} style={styles.videoWrapper} >
+                                    <YoutubePlayer height={180} width={320} play={false} videoId={videoId} />
+                                </View>
+                            );
+                        })}
+                    </ScrollView>
                 </View>
                 
                 <View style={styles.card}>
@@ -79,56 +104,78 @@ export default function AtracaoDetalhes() {
                 </View>
 
                 <View style={styles.card}>
-                    <Text style={styles.sectionTitle}>Contato e localização</Text>
+                    <Text style={styles.sectionTitle}>Localização</Text>
 
-                    <View style={styles.infoBlock}>
-                        <Text style={styles.infoBlockLabel}>Endereço</Text>
-                        <Text style={styles.infoBlockText}>
+                    <View style={styles.mapPreview}>
+                        <Ionicons name="map" size={30} color="#2563EB" />
+                        <Text style={styles.mapPreviewAddress}>
                         {atracao.endereco.enderecoCompleto} - {atracao.endereco.cep}
                         </Text>
                     </View>
 
-                    <View style={styles.infoBlock}>
-                        <Text style={styles.infoBlockLabel}>E-mail</Text>
-                        <Text style={styles.infoBlockText}>{atracao.contato.email}</Text>
-                    </View>
+                    <CustomButton
+                        text={'Traçar rota'}
+                        buttonStyle={styles.mapButton}
+                        onPress={() => Linking.openURL(mapUrl)}
+                    />
+                </View>
 
-                    <View style={styles.infoBlock}>
-                        <Text style={styles.infoBlockLabel}>Telefone</Text>
-                        <Text style={styles.infoBlockText}>{atracao.contato.telefone}</Text>
-                    </View>
+                <View style={styles.card}>
+                    <Text style={styles.sectionTitle}>Contato</Text>
 
+                    <Pressable
+                        style={styles.contactRow}
+                        onPress={() => Linking.openURL(`tel:${atracao.contato.telefone}`)}
+                    >
+                        <View style={styles.contactIcon}>
+                            <Ionicons name="call-outline" size={18} color="#2563EB" />
+                        </View>
+
+                        <View style={styles.contactContent}>
+                            <Text style={styles.contactLabel}>Telefone</Text>
+                            <Text style={styles.contactValue}>{atracao.contato.telefone}</Text>
+                        </View>
+
+                        <Ionicons name="chevron-forward" size={18} color="#94A3B8" />
+                    </Pressable>
+
+                    <Pressable
+                        style={styles.contactRow}
+                        onPress={() => Linking.openURL(`mailto:${atracao.contato.email}`)}
+                    >
+                        <View style={styles.contactIcon}>
+                            <Ionicons name="mail-outline" size={18} color="#2563EB" />
+                        </View>
+
+                        <View style={styles.contactContent}>
+                            <Text style={styles.contactLabel}>E-mail</Text>
+                            <Text style={styles.contactValue}>{atracao.contato.email}</Text>
+                        </View>
+
+                        <Ionicons name="chevron-forward" size={18} color="#94A3B8" />
+                    </Pressable>
+
+                    {atracao.contato.whatsapp &&
+                        <Pressable
+                            style={styles.contactRow}
+                            onPress={() => Linking.openURL(`https://wa.me/${atracao.contato.whatsapp}`)}
+                        >
+                            <View style={styles.contactIcon}>
+                                <Ionicons name="logo-whatsapp" size={18} color="#2563EB" />
+                            </View>
+
+                            <View style={styles.contactContent}>
+                                <Text style={styles.contactLabel}>WhatsApp</Text>
+                                <Text style={styles.contactValue}>{atracao.contato.whatsapp}</Text>
+                            </View>
+
+                            <Ionicons name="chevron-forward" size={18} color="#94A3B8" />
+                        </Pressable>
+                    }
                 </View>
 
                 <View style={styles.actionsContainer}>
-                    <Pressable style={styles.primaryButton}>
-                        <Text style={styles.primaryButtonText}>Realizar reserva</Text>
-                    </Pressable>
-
-                    <Pressable
-                        style={styles.secondaryButton}
-                        onPress={() => Linking.openURL(`tel:${atracao.contato.telefone}`)}
-                        >
-                        <Text style={styles.secondaryButtonText}>Ligar</Text>
-                    </Pressable>
-
-                    <Pressable
-                        style={styles.secondaryButton}
-                        onPress={() => Linking.openURL(`mailto:${atracao.contato.email}`)}
-                        >
-                        <Text style={styles.secondaryButtonText}>Enviar e-mail</Text>
-                    </Pressable>
-
-                    <Pressable
-                        style={styles.secondaryButton}
-                        onPress={() => Linking.openURL(mapUrl)}
-                    >
-                        <Text style={styles.secondaryButtonText}>Ver localização</Text>
-                    </Pressable>
-
-                    <Pressable style={styles.favoriteButton}>
-                        <Text style={styles.favoriteButtonText}>Adicionar aos favoritos</Text>
-                    </Pressable>
+                    <CustomButton text={'Realizar reserva'} type='primary'/>
                 </View>
             </ScrollView>
         </>
@@ -141,41 +188,42 @@ const styles = StyleSheet.create({
         backgroundColor: '#F1F5F9',
     },
     content: {
-            padding: 16,
-            paddingBottom: 32,
+        padding: 16,
+        paddingBottom: 32,
     },
-    centered: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: '#F1F5F9',
-            padding: 24,
+    titleRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 24,
     },
     title: {
-            fontSize: 28,
-            fontWeight: '800',
-            color: '#0F172A',
-            marginBottom: 12,
+        fontSize: 28,
+        fontWeight: '800',
+        color: '#0F172A',
     },
     badgesRow: {
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            gap: 8,
-            marginBottom: 18,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 8,
+        marginBottom: 20,
     },
     badge: {
-            backgroundColor: '#E2E8F0',
-            paddingHorizontal: 12,
-            paddingVertical: 6,
-            borderRadius: 999,
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#E2E8F0',
+        paddingHorizontal: 12,
+        paddingVertical: 6,
+        borderRadius: 999,
     },
     badgeHighlight: {
-            backgroundColor: '#DBEAFE',
+        backgroundColor: '#DBEAFE',
     },
     badgeText: {
-            fontSize: 12,
-            fontWeight: '600',
-            color: '#334155',
+        marginLeft: 6,
+        fontSize: 12,
+        fontWeight: '600',
+        color: '#334155',
     },
     badgeHighlightText: {
         color: '#1D4ED8',
@@ -185,11 +233,68 @@ const styles = StyleSheet.create({
         paddingBottom: 6,
         marginBottom: 18,
     },
-    galleryImage: {
-        width: 280,
-        height: 190,
-        borderRadius: 18,
-        backgroundColor: '#CBD5E1',
+    mapPreview: {
+        backgroundColor: '#EFF6FF',
+        borderRadius: 16,
+        padding: 18,
+        alignItems: 'center',
+        marginBottom: 12,
+    },
+    mapPreviewTitle: {
+        marginTop: 8,
+        fontSize: 15,
+        fontWeight: '700',
+        color: '#0F172A',
+    },
+    mapPreviewAddress: {
+        marginTop: 6,
+        fontSize: 13,
+        color: '#475569',
+        textAlign: 'center',
+        lineHeight: 20,
+    },
+    mapButton: {
+        backgroundColor: '#2563EB',
+        borderRadius: 14,
+        paddingVertical: 14,
+        alignItems: 'center',
+    },
+    mapButtonText: {
+        color: '#FFFFFF',
+        fontSize: 15,
+        fontWeight: '700',
+    },
+    contactRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 14,
+        borderBottomWidth: 1,
+        borderBottomColor: '#E2E8F0',
+    },
+    contactRowLast: {
+        borderBottomWidth: 0,
+    },
+    contactIcon: {
+        width: 38,
+        height: 38,
+        borderRadius: 12,
+        backgroundColor: '#EFF6FF',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginRight: 12,
+    },
+    contactContent: {
+        flex: 1,
+    },
+    contactLabel: {
+        fontSize: 13,
+        fontWeight: '700',
+        color: '#0F172A',
+        marginBottom: 2,
+    },
+    contactValue: {
+        fontSize: 14,
+        color: '#475569',
     },
     card: {
         backgroundColor: '#FFFFFF',
@@ -210,6 +315,8 @@ const styles = StyleSheet.create({
     },
     videoWrapper: {
         borderRadius: 16,
+        aspectRatio: 16 / 9,
+        width: '100%',
         overflow: 'hidden',
         backgroundColor: '#000',
     },
@@ -252,40 +359,5 @@ const styles = StyleSheet.create({
     actionsContainer: {
         marginTop: 4,
         gap: 12,
-    },
-    primaryButton: {
-        backgroundColor: '#0284C7',
-        paddingVertical: 15,
-        borderRadius: 14,
-        alignItems: 'center',
-    },
-    primaryButtonText: {
-        color: '#FFFFFF',
-        fontSize: 15,
-        fontWeight: '700',
-    },
-    secondaryButton: {
-        backgroundColor: '#FFFFFF',
-        paddingVertical: 15,
-        borderRadius: 14,
-        alignItems: 'center',
-        borderWidth: 1,
-        borderColor: '#CBD5E1',
-    },
-    secondaryButtonText: {
-        color: '#0F172A',
-        fontSize: 15,
-        fontWeight: '600',
-    },
-    favoriteButton: {
-        backgroundColor: '#0F172A',
-        paddingVertical: 15,
-        borderRadius: 14,
-        alignItems: 'center',
-    },
-    favoriteButtonText: {
-        color: '#FFFFFF',
-        fontSize: 15,
-        fontWeight: '700',
-    },
+    }
 })
