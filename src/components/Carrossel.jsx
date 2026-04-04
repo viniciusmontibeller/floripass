@@ -58,7 +58,7 @@ useEffect(() => {
         scrollEventThrottle={16}
         >
         {data.map((item) => (
-          <View key={item.id} style={[styles.slide, { width: containerWidth }]}> //cada imagem ocupa 1
+          <View key={item.id} style={[styles.slide, { width: containerWidth }]}> {/*cada imagem ocupa 1*/}
             <Image
               source={{ uri: item.url }}
               resizeMode="cover"

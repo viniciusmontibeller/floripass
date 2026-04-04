@@ -164,29 +164,186 @@
       "horariosFuncionamento": [
         {
           "dias": ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"],
-          "abre": "00:00",
-          "fecha": "23:59"
+          "abre": "05:00",
+          "fecha": "17:00"
         }
       ],
       "endereco": {
         "enderecoCompleto": "Praia dos Ingleses - Ingleses, Florianópolis - SC",
         "bairro": "Ingleses",
         "cidade": "Florianópolis",
-        "cep": "88058-000"
+        "cep": "88058-300"
       },
       "localizacao": {
-        "latitude": -27.43569789053739,
-        "longitude": -48.389389641791524
+        "latitude": -27.43954401206246, 
+        "longitude": -48.402492392527854
       },
       "contato": {
-        "email": "",
-        "telefone": "",
-        "whatsapp": ""
+        "email": "Passeandopelonorte@gmail.com",
+        "telefone": "48 99812-2412",
+        "whatsapp": "48 99812-2412"
       },
       "reserva": {
         "obrigatoria": false,
         "url": ""
       }
+    },
+{
+  "id": "atracao_004",
+  "nome": "Passeio praias do Sul",
+  "categoria": "Praia",
+  "bairro": "Campeche",
+  "thumbnail": "https://www.maladeaventuras.com/wp-content/uploads/2020/03/passeios-em-florianopolis-campeche-2-3.jpg",
+  "imagens": [
+    {
+      "id": 1,
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/1d/4f/b0/praia-daniela-floripa.jpg?w=1200&h=-1&s=1"
+    },
+    {
+      "id": 2,
+      "url": "https://www.pousadadossonhos.com.br/wp-content/uploads/2018/12/praia-da-armacao-florianopolis-6.jpg"
+    },
+    {
+      "id": 3,
+      "url": "https://blog.blablacar.com.br/wp-content/uploads/2024/02/barra-da-lagoa-florianopolis.webp"
+    },
+    {
+      "id": 4,
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCJL30CuZxNIQvUD15_OvH80Nmph5B34H6Tw&s"
     }
+  ],
+  "videos": [
+    "https://www.youtube.com/watch?v=BgWZY2BikeE"
+  ],
+  "descricao": "Passeio pelas praias mais belas e preservadas do sul de Florianópolis. A região sul é conhecida por suas paisagens naturais, águas limpas e ambiente mais tranquilo, ideal para quem busca contato com a natureza. Neste passeio passaremos por: Campeche, Armação, Matadeiro e Lagoinha do Leste, com destaque para trilhas ecológicas e vistas deslumbrantes.",
+  "horariosFuncionamento": [
+    {
+      "dias": ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"],
+      "abre": "05:00",
+      "fecha": "17:00"
+    }
+  ],
+  "endereco": {
+    "enderecoCompleto": "Região Sul da Ilha - Florianópolis - SC",
+    "bairro": "Sul da Ilha",
+    "cidade": "Florianópolis",
+    "cep": "88063-709"
+  },
+  "localizacao": {
+    "latitude": -27.665591139090473, 
+    "longitude": -48.5033775210432
+  },
+  "contato": {
+    "email": "Passeandopelosul@gmail.com",
+    "telefone": "48 99831-3899",
+    "whatsapp": "48 99831-3899"
+  },
+  "reserva": {
+    "obrigatoria": false,
+    "url": ""
+  }
+},
+{
+  "id": "atracao_005",
+  "nome": "Passeio a Cavalo na Barra da Lagoa",
+  "categoria": "Aventura / Natureza",
+  "bairro": "Barra da Lagoa",
+  "thumbnail": "https://www.civitatis.com/f/brasil/florianopolis/galeria/big/paseo-a-caballo-por-barra-da-lagoa-9.jpg",
+  "imagens": [
+    {
+      "id": 1,
+      "url": "https://ilhadamagiaonline.com.br/wp-content/uploads/2023/10/passeio-a-cavalo-em-florianopolis-1.webp"
+    },
+    {
+      "id": 2,
+      "url": "https://static.ndmais.com.br/2022/11/cavalgada-na-praia-de-mocambique-credito-arthur-jose-anjos-santos-divulgacao-haras-ype-2-scaled.jpg"
+    },
+    {
+      "id": 3,
+      "url": "https://destinoflorianopolis.com.br/wp-content/uploads/2018/01/passeio-a-cavalo-em-Florian%C3%B3polis.jpg"
+    }
+  ],
+  "videos": [
+    "https://www.youtube.com/watch?v=aIkZZ3ErIWA"
+  ],
+  "descricao": "O passeio a cavalo na Barra da Lagoa é uma experiência única que combina natureza, aventura e tranquilidade. Os trajetos passam por trilhas, áreas de vegetação nativa e trechos próximos à praia, proporcionando belas paisagens ao longo do percurso. Ideal para iniciantes e também para quem já tem experiência, o passeio é guiado e permite um contato direto com a natureza local.",
+  "horariosFuncionamento": [
+    {
+      "dias": ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"],
+      "abre": "08:00",
+      "fecha": "18:00"
+    }
+  ],
+  "endereco": {
+    "enderecoCompleto": "Av. Cidade de Córdoba, 2000 - Barra da Lagoa",
+    "bairro": "Barra da Lagoa",
+    "cidade": "Florianópolis",
+    "cep": "88061-200"
+  },
+  "localizacao": {
+    "latitude": -27.57039392294297, 
+    "longitude": -48.42997750885657
+  },
+  "contato": {
+    "email": "contato@cavalgadabarra.com",
+    "telefone": "+55 48 99125-5926",
+    "whatsapp": "48 99871-9256"
+  },
+  "reserva": {
+    "obrigatoria": true,
+    "url": ""
+  }
+},
+{
+  "id": "atracao_006",
+  "nome": "City Tour Floripa by Bus",
+  "categoria": "Passeio Turístico",
+  "bairro": "Centro",
+  "thumbnail": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/a1/ec/03/bus.jpg?w=1200&h=-1&s=1",
+  "imagens": [
+    {
+      "id": 1,
+      "url": "https://lirp.cdn-website.com/8c40396a/dms3rep/multi/opt/1-cd89c358-640w.jpg"
+    },
+    {
+      "id": 2,
+      "url": "https://ilhadamagiaonline.com.br/wp-content/uploads/2023/10/city-tour-toda-ilha-floripa-by-bus.webp"
+    },
+    {
+      "id": 3,
+      "url": "https://cdn.paytour.com.br/assets/images/passeios-40/4285ad1238106058a478752fc0886241/12.png"
+    }
+  ],
+  "videos": [
+    "https://www.youtube.com/watch?v=SOU8b6tHqb0"
+  ],
+  "descricao": "O City Tour Floripa by Bus é uma excelente opção para conhecer os principais pontos turísticos de Florianópolis de forma prática e confortável. O passeio é realizado em ônibus panorâmico e percorre diversos bairros da cidade, incluindo o Centro Histórico, Lagoa da Conceição e praias do norte e sul da ilha. Durante o trajeto, guias fornecem informações sobre a história, cultura e curiosidades locais, tornando a experiência completa para visitantes.",
+  "horariosFuncionamento": [
+    {
+      "dias": ["segunda", "terca", "quarta", "quinta", "sexta", "sabado"],
+      "abre": "09:00",
+      "fecha": "17:00"
+    }
+  ],
+  "endereco": {
+    "enderecoCompleto": "Av. Me. Benvenuta, 687 - Santa Monica, Florianópolis - SC,",
+    "bairro": "Trindade",
+    "cidade": "Florianópolis",
+    "cep": "88035-000"
+  },
+  "localizacao": {
+    "latitude": -27.589926526552965, 
+    "longitude": -48.51458726533898
+  },
+  "contato": {
+    "email": "contato@citytourfloripa.com",
+    "telefone": "+55 48 98269-8667",
+    "whatsapp": "48 98269-8667"
+  },
+  "reserva": {
+    "obrigatoria": true,
+    "url": ""
+  }
+}
   ]
 }
