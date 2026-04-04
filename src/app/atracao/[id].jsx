@@ -8,8 +8,8 @@ import data from '../../../data/floripasse.json'
 import Carrossel from "../../components/Carrossel";
 import CustomButton from '../../components/ui/CustomButton';
 import FavoriteButton from '../../components/ui/FavoriteButton';
-import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
+import { pegaFavoritos, hablitarFavoritos } from '../../utils/favoritos';
 
 export default function AtracaoDetalhes() {
     const [favorito, setFavorito] = useState(false);
@@ -22,6 +22,14 @@ export default function AtracaoDetalhes() {
         android: `geo:0,0?q=${latitude}, ${longitude}`,
     });
 
+        useEffect(() => {  
+    const carregar = async () => {  
+        const favoritos = await pegaFavoritos();  
+        setFavorito(favoritos.includes(atracao.id));  
+    };  
+    
+    carregar();  
+    }, []);
 
     return (
         <>
@@ -42,8 +50,11 @@ export default function AtracaoDetalhes() {
                     <Text style={styles.title}>{atracao.nome}</Text>
 
                     <FavoriteButton
-                      isFavorite={favorito}
-                        onPress={() => setFavorito(!favorito)}
+                    isFavorite={favorito}
+                    onPress={async () => {
+                        const novos = await hablitarFavoritos(atracao.id);
+                        setFavorito(novos.includes(atracao.id));
+                    }}
                     />
                 </View>
 
@@ -68,7 +79,7 @@ export default function AtracaoDetalhes() {
                 </View>
 
                 <View style={styles.card}>
-                    <Text Text style={styles.sectionTitle}>Sobre</Text>
+                    <Text style={styles.sectionTitle}>Sobre</Text>
                     <Text style={styles.description}>{atracao.descricao}</Text>
                 </View>
 

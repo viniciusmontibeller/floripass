@@ -42,6 +42,12 @@ export default function TabLayout() {
           title: "Atrações",
         }}
       />
+      <Tabs.Screen
+      name="Favoritos"
+      options={{
+        title: "Favoritos",
+      }}
+    />
     </Tabs>
   );
 }
