@@ -7,9 +7,9 @@ export default function ListaAtracoes() {
   // const [loading, setLoading] = useState()
 
   return (
-    <View>
+    <View style = {{flex: 1}}>
       <FlatList
-        styles={styles.container}
+        style={styles.container}
         data={data.atracoes}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <AtracaoCard atracao={item} />}
