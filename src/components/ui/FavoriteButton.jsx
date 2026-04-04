@@ -11,7 +11,7 @@ export default function FavoriteButton({
       <Ionicons
         name={isFavorite ? 'star' : 'star-outline'}
         size={20}
-        color={'#F59E0B'}
+        color={isFavorite ? '#F59E0B' : '#CBD5E1'}
       />
     </Pressable>
   );

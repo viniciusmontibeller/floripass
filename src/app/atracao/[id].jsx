@@ -8,9 +8,11 @@ import data from '../../../data/floripasse.json'
 import Carrossel from "../../components/Carrossel";
 import CustomButton from '../../components/ui/CustomButton';
 import FavoriteButton from '../../components/ui/FavoriteButton';
+import { useState } from 'react'
 
 
 export default function AtracaoDetalhes() {
+    const [favorito, setFavorito] = useState(false);
     const { id } = useLocalSearchParams();
     const atracao = data.atracoes.find((item) => String(item.id) == String(id));
 
@@ -40,7 +42,8 @@ export default function AtracaoDetalhes() {
                     <Text style={styles.title}>{atracao.nome}</Text>
 
                     <FavoriteButton
-
+                      isFavorite={favorito}
+                        onPress={() => setFavorito(!favorito)}
                     />
                 </View>
 
