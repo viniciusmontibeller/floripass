@@ -9,7 +9,7 @@ export default function CustomButton({ text, type = 'primary', buttonStyle, text
 
     return (
         <Pressable
-            style={[buttonVariant, buttonStyle]}
+            style={({ pressed }) => [buttonVariant, pressed && styles.pressed, buttonStyle]}
             {...props}
         >
             <Text
@@ -55,5 +55,8 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         fontSize: 15,
         fontWeight: '700',
+    },
+    pressed: {
+        opacity: 0.8
     },
 })

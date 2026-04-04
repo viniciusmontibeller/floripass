@@ -58,7 +58,7 @@ useEffect(() => {
         scrollEventThrottle={16}
         >
         {data.map((item) => (
-          <View key={item.id} style={[styles.slide, { width: containerWidth }]}> {/*cada imagem ocupa 1*/}
+          <View key={item.id} style={[styles.slide, { width: containerWidth }]}>
             <Image
               source={{ uri: item.url }}
               resizeMode="cover"
@@ -81,7 +81,7 @@ slide: {
 },
 
 Imagem: {
-  width: "90%",
+  width: "100%",
   borderRadius: 20, 
 },
 })
