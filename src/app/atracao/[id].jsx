@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, ScrollView, Image, Button, Linking, Pressable } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Linking, Pressable } from 'react-native'
 import YoutubePlayer from 'react-native-youtube-iframe';
 import { getYoutubeVideoId } from '../../utils/getYoutubeVideoId'
 import { Platform } from 'react-native'
-import { Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import { Stack, useLocalSearchParams } from 'expo-router'
 import data from '../../../data/floripasse.json'
 import Carrossel from "../../components/Carrossel";
@@ -117,7 +117,7 @@ export default function AtracaoDetalhes() {
                     </View>
 
                     <CustomButton
-                        text={'Traçar rota'}
+                        text='Traçar rota'
                         buttonStyle={styles.mapButton}
                         onPress={() => Linking.openURL(mapUrl)}
                     />
@@ -177,9 +177,17 @@ export default function AtracaoDetalhes() {
                     }
                 </View>
 
-                <View style={styles.actionsContainer}>
-                    <CustomButton text={'Realizar reserva'} type='primary'/>
-                </View>
+                {atracao.reserva.obrigatoria && (
+                    <View style={styles.actionsContainer}>
+                        <CustomButton
+                            text='Realizar reserva'
+                            type='primary'
+                            onPress={() => atracao.reserva.url
+                                ? Linking.openURL(atracao.reserva.url)
+                                : Linking.openURL(`https://wa.me/${atracao.contato.whatsapp}`)}
+                        />
+                    </View>
+                )}
             </ScrollView>
         </>
     );
