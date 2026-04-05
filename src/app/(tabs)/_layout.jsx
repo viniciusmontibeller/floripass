@@ -70,7 +70,21 @@ export default function TabLayout() {
             />
           ),
       }}
-    />
+      />
+      
+        <Tabs.Screen
+        name="passes"
+        options={{
+          title: "Passes",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+                name={focused ? "ticket" : "ticket-outline"}
+                size={size}
+                color={color}
+              />
+            ),
+        }}
+      />
     </Tabs>
   );
 }

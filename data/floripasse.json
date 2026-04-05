@@ -13,21 +13,24 @@
       "nome": "Básico",
       "quantidadeAtracoes": 3,
       "validadeDias": 3,
-      "preco": 89
+      "preco": 89,
+      "destaque": false
     },
     {
       "id": "plus",
       "nome": "Plus",
       "quantidadeAtracoes": 5,
       "validadeDias": 5,
-      "preco": 149
+      "preco": 149,
+      "destaque": true
     },
     {
       "id": "top",
       "nome": "Top",
       "quantidadeAtracoes": 7,
       "validadeDias": 7,
-      "preco": 199
+      "preco": 199,
+      "destaque": false
     }
   ],
   "atracoes": [
@@ -42,7 +45,8 @@
         {"id":3, "url":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/e8/ab/5a/20160910-140532-largejpg.jpg?w=1200&h=1200&s=1"}
       ],
       "videos": [
-        "https://www.youtube.com/watch?v=TfzwL_BML6I"
+        "https://www.youtube.com/watch?v=TfzwL_BML6I",
+        "https://www.youtube.com/watch?v=RVkKEpD7NOI"
       ],
       "descricao": "O Palácio Cruz e Sousa é um dos principais patrimônios históricos de Florianópolis, localizado na Praça XV de Novembro. Construído no século XVIII e remodelado no século XIX, já foi sede do governo estadual e hoje abriga o Museu Histórico de Santa Catarina. Seu nome homenageia o poeta simbolista Cruz e Sousa, natural do estado. O edifício se destaca pela arquitetura eclética e por seu acervo que retrata a história política e cultural catarinense.",
       "horariosFuncionamento": [
