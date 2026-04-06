@@ -1,9 +1,9 @@
 import { useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { FlatList, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import data from '../../../data/floripasse.json';
-import { pegaFavoritos } from '../../utils/favoritos';
+import { pegaFavoritos, hablitarFavoritos } from '../../utils/favoritos';
 import AtracaoCard from '../../components/AtracaoCard';
 
 export default function Favoritos() {
@@ -26,6 +26,12 @@ export default function Favoritos() {
     }, [])
   );
 
+  async function toggleFavorito(id) {
+    const novosIds = await hablitarFavoritos(id);
+    const novaLista = data.atracoes.filter((item) => novosIds.includes(item.id));
+    setFavoritos(novaLista);
+  }
+
   return (
     <SafeAreaView style={{ flex: 1 }} edges={['top']}>
       {favoritos.length === 0 ? (
@@ -36,7 +42,7 @@ export default function Favoritos() {
         <FlatList
           data={favoritos}
           keyExtractor={(item) => item.id} 
-          renderItem={({ item }) => <AtracaoCard atracao={item} />}
+          renderItem={({ item }) => <AtracaoCard atracao={item} isFavorite={true} onToggleFavorite={() => toggleFavorito(item.id)}/>}
         />
       )}
     </SafeAreaView>

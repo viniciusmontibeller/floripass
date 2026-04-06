@@ -8,7 +8,8 @@ import data from '../../../data/floripasse.json'
 import Carrossel from "../../components/Carrossel";
 import CustomButton from '../../components/ui/CustomButton';
 import FavoriteButton from '../../components/ui/FavoriteButton';
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useFocusEffect } from 'expo-router';
 import { pegaFavoritos, hablitarFavoritos } from '../../utils/favoritos';
 
 export default function AtracaoDetalhes() {
@@ -22,14 +23,16 @@ export default function AtracaoDetalhes() {
         android: `geo:0,0?q=${latitude}, ${longitude}`,
     });
 
-        useEffect(() => {  
-    const carregar = async () => {  
-        const favoritos = await pegaFavoritos();  
-        setFavorito(favoritos.includes(atracao.id));  
-    };  
-    
-    carregar();  
-    }, []);
+    useFocusEffect(
+        useCallback(() => {
+            const carregar = async () => {
+                const favoritos = await pegaFavoritos();
+                setFavorito(favoritos.includes(atracao.id));
+            };
+
+            carregar();
+        }, [atracao.id])
+    );
 
     return (
         <>
@@ -50,11 +53,12 @@ export default function AtracaoDetalhes() {
                     <Text style={styles.title}>{atracao.nome}</Text>
 
                     <FavoriteButton
-                    isFavorite={favorito}
-                    onPress={async () => {
-                        const novos = await hablitarFavoritos(atracao.id);
-                        setFavorito(novos.includes(atracao.id));
-                    }}
+                        isFavorite={favorito}
+                        style={{backgroundColor: 'transparent'}}
+                        onPress={async () => {
+                            const novos = await hablitarFavoritos(atracao.id);
+                            setFavorito(novos.includes(atracao.id));
+                        }}
                     />
                 </View>
 
@@ -222,6 +226,7 @@ const styles = StyleSheet.create({
         marginBottom: 24,
     },
     title: {
+        maxWidth: "90%",
         fontSize: 28,
         fontWeight: '800',
         color: '#0F172A',

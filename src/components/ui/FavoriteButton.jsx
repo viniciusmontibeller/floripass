@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function FavoriteButton({
   isFavorite = false,
-  onPress = () => {},
+  onPress,
   style,
 }) {
   return (
@@ -11,7 +11,7 @@ export default function FavoriteButton({
       <Ionicons
         name={isFavorite ? 'star' : 'star-outline'}
         size={20}
-        color={isFavorite ? '#F59E0B' : '#CBD5E1'}
+        color={'#F59E0B'}
       />
     </Pressable>
   );
@@ -19,8 +19,10 @@ export default function FavoriteButton({
 
 const styles = StyleSheet.create({
   button: {
+    width: 25,
+    height: 25,
     borderRadius: 20,
-    // backgroundColor: 'transparent',
+    backgroundColor: 'rgba(0,0,0, 0.1)',
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#000',

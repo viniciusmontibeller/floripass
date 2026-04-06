@@ -1,10 +1,10 @@
 import { Pressable, StyleSheet, Text, View, ImageBackground } from 'react-native'
-import React from 'react'
+import FavoriteButton from './ui/FavoriteButton';
 import { Link } from 'expo-router'
 
-export default function AtracaoCard({ atracao }) {
+export default function AtracaoCard({ atracao, isFavorite, onToggleFavorite }) {
     const { id, nome, bairro, thumbnail } = atracao
-
+    
     return (
         <View style={styles.contianer}>
             <Link
@@ -18,12 +18,19 @@ export default function AtracaoCard({ atracao }) {
                             height: 180,
                             width: '100%',
                             justifyContent: 'flex-end',
+                            position: 'relative'
                         }}
                     >
                         <View style={styles.textArea}>
                             <Text style={styles.text}>{nome}</Text>
                             <Text style={styles.text}>{bairro}</Text>
                         </View>
+                        
+                        <FavoriteButton
+                            isFavorite={isFavorite}
+                            style={{position: 'absolute', top: 0, right: 0, margin: 10}}
+                            onPress={onToggleFavorite}
+                        />
                     </ImageBackground>
                 </Pressable>
             </Link>
