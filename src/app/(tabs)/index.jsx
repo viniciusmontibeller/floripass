@@ -1,19 +1,15 @@
 import {
+  View,
   Text,
   StyleSheet,
   ImageBackground,
   Dimensions,
-<<<<<<< Updated upstream
   ScrollView,
   Pressable
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-=======
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
->>>>>>> Stashed changes
 
 const width = Dimensions.get("window").width;
 
@@ -72,7 +68,7 @@ export default function Home() {
         </View>
 
         <View style={styles.navigationArea}>
-          <Link href="/ListaAtracoes" asChild>
+          <Link href="/listaAtracoes" asChild>
             <Pressable style={styles.button}>
               <Text style={styles.buttonText}>Explorar atrações</Text>
             </Pressable>
