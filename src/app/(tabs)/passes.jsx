@@ -4,11 +4,12 @@ import data from '../../../data/floripasse.json'
 import CustomButton from '../../components/ui/CustomButton';
 import ModalCompraPasse from '../../components/ModalCompraPasse';
 import { pegaPasses, criarCompraPasse, salvaPasses } from '../../utils/passes'
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react'
 
 export default function Passes() {
-    const opcoesPasses = data.passes
-    const [passesAdquiridos, setPassesAdquiridos] = useState([])
+    const opcoesPasses = data.passes;
+    const [passesAdquiridos, setPassesAdquiridos] = useState([]);
     const [planoSelecionado, setPlanoSelecionado] = useState(null);
     const [modalVisivel, setModalVisivel] = useState(false);
 
@@ -45,7 +46,7 @@ export default function Passes() {
     }
 
     return (
-      <>
+      <SafeAreaView style={{ flex: 1}} edges={['top']}>
         <ScrollView
             style={styles.screen}
             contentContainerStyle={styles.content}
@@ -176,7 +177,7 @@ export default function Passes() {
             fecharModal={fecharCompraModal}
             confirmar={confirmarCompra}
         />
-    </>
+    </SafeAreaView>
   )
 }
 

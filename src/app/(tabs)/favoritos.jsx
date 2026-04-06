@@ -1,6 +1,7 @@
 import { useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { View, FlatList, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import data from '../../../data/floripasse.json';
 import { pegaFavoritos } from '../../utils/favoritos';
 import AtracaoCard from '../../components/AtracaoCard';
@@ -26,9 +27,9 @@ export default function Favoritos() {
   );
 
   return (
-    <View style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 }} edges={['top']}>
       {favoritos.length === 0 ? (
-        <Text style={{ textAlign: 'center', marginTop: 50 }}>
+        <Text style={{ textAlign: 'center'}}>
           Você ainda não adicionou atrações à sua lista
         </Text>
       ) : (
@@ -38,6 +39,6 @@ export default function Favoritos() {
           renderItem={({ item }) => <AtracaoCard atracao={item} />}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
