@@ -1,15 +1,19 @@
 import {
   Text,
-  View,
   StyleSheet,
   ImageBackground,
   Dimensions,
+<<<<<<< Updated upstream
   ScrollView,
   Pressable
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+=======
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+>>>>>>> Stashed changes
 
 const width = Dimensions.get("window").width;
 

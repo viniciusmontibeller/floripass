@@ -46,7 +46,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="ListaAtracoes"
+        name="listaAtracoes"
         options={{
           title: "Atrações",
           tabBarIcon: ({ color, size, focused }) => (
