@@ -1,4 +1,5 @@
-import { Modal, ScrollView, StyleSheet, Text, View, Pressable, TextInput } from 'react-native'
+import { Modal, ScrollView, StyleSheet, Text, View, Pressable, TextInput, KeyboardAvoidingView, Platform } from 'react-native'
+import CustomButton from '../components/ui/CustomButton'
 import { useEffect, useMemo, useState } from 'react';
 
 export default function ModalCompraPasse({ visivel, passeSelecionado, fecharModal, confirmar}) {
@@ -55,7 +56,6 @@ export default function ModalCompraPasse({ visivel, passeSelecionado, fecharModa
         });
     }
 
-
   return (
     <Modal
         visible={visivel}
@@ -64,74 +64,88 @@ export default function ModalCompraPasse({ visivel, passeSelecionado, fecharModa
         onRequestClose={fecharModal}
     >
         <View style={styles.modalOverlay}>
-            <View style={styles.modalCard}>
-                <Text style={styles.modalTitle}>Comprar Passe {passeSelecionado.nome}</Text>
-                <Text style={styles.modalSubtitle}>
-                    {passeSelecionado.quantidadeAtracoes} atrações • {passeSelecionado.validadeDias} dias
-                </Text>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                style={styles.keyboardContainer}
+            >
+                <View style={styles.modalCard}>
+                    <Text style={styles.modalTitle}>Comprar Passe {passeSelecionado.nome}</Text>
+                    <Text style={styles.modalSubtitle}>
+                        {passeSelecionado.quantidadeAtracoes} atrações • {passeSelecionado.validadeDias} dias
+                    </Text>
 
-                <Text style={styles.inputLabel}>Quantidade</Text>
+                    <Text style={styles.inputLabel}>Quantidade</Text>
 
-                <View style={styles.quantityRow}>
-                    <Pressable style={styles.quantityButton} onPress={diminuiQuantidade}>
-                        <Text style={styles.quantityButtonText}>-</Text>
-                    </Pressable>
+                    <View style={styles.quantityRow}>
+                        <Pressable style={styles.quantityButton} onPress={diminuiQuantidade}>
+                            <Text style={styles.quantityButtonText}>-</Text>
+                        </Pressable>
+                        
+                        <Text style={styles.quantityValue}>{quantidade}</Text>
 
-                    <Text style={styles.quantityValue}>{quantidade}</Text>
+                        <Pressable style={styles.quantityButton} onPress={aumentaQuantidade}>
+                            <Text style={styles.quantityButtonText}>+</Text>
+                        </Pressable>
+                    </View>
+                        
+                    <Text style={styles.inputLabel}>Titulares dos passes</Text>
 
-                    <Pressable style={styles.quantityButton} onPress={aumentaQuantidade}>
-                        <Text style={styles.quantityButtonText}>+</Text>
-                    </Pressable>
-                </View>
+                    <ScrollView
+                        style={styles.holdersList}
+                        contentContainerStyle={styles.holdersContent}
+                        showsVerticalScrollIndicator={false}
+                        keyboardShouldPersistTaps="handled"
+                    >
+                        {donos.map((dono, index) => (
+                            <View key={index} style={styles.inputBlock}>
+                                <Text style={styles.inputLabel}>Titular {index + 1}</Text>
+                                <TextInput
+                                value={dono}
+                                onChangeText={(value) => atualizaNomeDono(index, value)}
+                                placeholder="Digite o nome do titular"
+                                placeholderTextColor="#CBD5E1"
+                                style={styles.input}
+                                />
+                            </View>
+                        ))}
+                    </ScrollView>
+                        
                     
-                <Text style={styles.inputLabel}>Titulares dos passes</Text>
-
-                <ScrollView
-                    style={styles.holdersList}
-                    contentContainerStyle={styles.holdersContent}
-                    showsVerticalScrollIndicator={false}
-                >
-                    {donos.map((dono, index) => (
-                        <View key={index} style={styles.inputBlock}>
-                            <Text style={styles.inputLabel}>Titular {index + 1}</Text>
-                            <TextInput
-                            value={dono}
-                            onChangeText={(value) => atualizaNomeDono(index, value)}
-                            placeholder="Digite o nome do titular"
-                            style={styles.input}
-                            />
+                    <View style={styles.summaryBox}>
+                        <View style={styles.summaryRow}>
+                            <Text style={styles.summaryLabel}>Valor unitário</Text>
+                            <Text style={styles.summaryValue}>R${passeSelecionado.preco}</Text>
                         </View>
-                    ))}
-                </ScrollView>
-                    
-                
-                <View style={styles.summaryBox}>
-                    <View style={styles.summaryRow}>
-                        <Text style={styles.summaryLabel}>Valor unitário</Text>
-                        <Text style={styles.summaryValue}>R${passeSelecionado.preco}</Text>
+
+                        <View style={styles.summaryRow}>
+                            <Text style={styles.summaryLabel}>Quantidade</Text>
+                            <Text style={styles.summaryValue}>{quantidade}</Text>
+                        </View>
+
+                        <View style={[styles.summaryRow, styles.summaryRowTotal]}>
+                            <Text style={styles.summaryTotalLabel}>Total</Text>
+                            <Text style={styles.summaryTotalValue}>R${total}</Text>
+                        </View>
                     </View>
 
-                    <View style={styles.summaryRow}>
-                        <Text style={styles.summaryLabel}>Quantidade</Text>
-                        <Text style={styles.summaryValue}>{quantidade}</Text>
-                    </View>
-
-                    <View style={[styles.summaryRow, styles.summaryRowTotal]}>
-                        <Text style={styles.summaryTotalLabel}>Total</Text>
-                        <Text style={styles.summaryTotalValue}>R${total}</Text>
+                    <View style={styles.modalActions}>
+                        <CustomButton
+                            text="Cancelar"
+                            type='secondary'
+                            buttonStyle={styles.cancelButton}
+                            textStyle={styles.cancelButtonText}
+                            onPress={fecharModal}
+                        />
+                        <CustomButton
+                            text="Confirmar compra"
+                            type='prymary'
+                            buttonStyle={styles.confirmButton}
+                            textStyle={styles.confirmButtonText}
+                            onPress={lidaComConfirmar}
+                        />
                     </View>
                 </View>
-
-                <View style={styles.modalActions}>
-                    <Pressable style={styles.cancelButton} onPress={fecharModal}>
-                        <Text style={styles.cancelButtonText}>Cancelar</Text>
-                    </Pressable>
-
-                    <Pressable style={styles.confirmButton} onPress={lidaComConfirmar}>
-                        <Text style={styles.confirmButtonText}>Confirmar compra</Text>
-                    </Pressable>
-                </View>
-            </View>
+            </KeyboardAvoidingView>
         </View>
     </Modal>
   )
@@ -254,16 +268,11 @@ const styles = StyleSheet.create({
     cancelButton: {
         flex: 1,
         height: 50,
-        borderRadius: 14,
-        borderWidth: 1,
         borderColor: '#CBD5E1',
         justifyContent: 'center',
-        alignItems: 'center',
     },
     cancelButtonText: {
-        fontSize: 15,
         fontWeight: '700',
-        color: '#0F172A',
     },
     confirmButton: {
         flex: 1,
@@ -271,11 +280,8 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         backgroundColor: '#2563EB',
         justifyContent: 'center',
-        alignItems: 'center',
     },
     confirmButtonText: {
-        fontSize: 15,
         fontWeight: '700',
-        color: '#FFFFFF',
     },
 })
