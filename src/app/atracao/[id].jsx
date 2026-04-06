@@ -95,8 +95,10 @@ export default function AtracaoDetalhes() {
                             const videoId = getYoutubeVideoId(videoUrl)
 
                             return (
-                                <View key={index} style={styles.videoWrapper} >
-                                    <YoutubePlayer height={180} width={320} play={false} videoId={videoId} />
+                                <View key={index} style={styles.videoItem}>
+                                    <View style={styles.videoWrapper} >
+                                        <YoutubePlayer height={180} width={320} play={false} videoId={videoId} />
+                                    </View>
                                 </View>
                             );
                         })}
@@ -335,6 +337,9 @@ const styles = StyleSheet.create({
         color: '#0F172A',
         marginBottom: 12,
     },
+    videoItem: {
+        width: 310,
+    },
     videoWrapper: {
         borderRadius: 16,
         aspectRatio: 16 / 9,
@@ -350,7 +355,7 @@ const styles = StyleSheet.create({
     infoRow: {
         paddingVertical: 10,
         borderBottomWidth: 1,
-        borderBlockColor: '#E2E8F0',
+        borderBottomColor: '#E2E8F0',
     },
     infoLabel: {
         fontSize: 14,
