@@ -4,15 +4,23 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
-  Image,  
+  ScrollView,
+  Pressable
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link } from "expo-router";
-
+import { Ionicons } from "@expo/vector-icons";
 
 const width = Dimensions.get("window").width;
 
 export default function Home() {
+
+  const categorias = [
+    { nome: "Praias", icon: "sunny-outline" },
+    { nome: "Museus", icon: "business" },
+    { nome: "Trilhas", icon: "leaf-outline" },
+    { nome: "Cultura", icon: "color-palette-outline" },
+  ];
 
   return (
     <ImageBackground
@@ -22,13 +30,50 @@ export default function Home() {
       style={styles.container}
       resizeMode="cover"
     >
-       <SafeAreaView style={styles.overlay} edges={["top", "bottom"]}>
+      <SafeAreaView style={styles.overlay} edges={["top", "bottom"]}>
 
-        
-        <Text style={styles.description}>
-          Explore as melhores atrações, descubra novos lugares e aproveite experiências incríveis com Floripass.
-        </Text>
+        <View>
+          <Text style={styles.title}>Floripass</Text>
 
+          <Text style={styles.description}>
+            Explore as melhores atrações, descubra novos lugares e aproveite experiências incríveis.
+          </Text>
+
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.categoriesContainer}
+            contentContainerStyle={styles.categoriesContent}
+          >
+            {categorias.map((item, index) => (
+              <View
+                key={index}
+                style={[
+                  styles.category,
+                  index === 0 && { marginLeft: 5 },
+                  index === categorias.length - 1 && { marginRight: 20 },
+                ]}
+              >
+                <Ionicons
+                  name={item.icon}
+                  size={18}
+                  color="#fff"
+                  style={{ marginRight: 6 }}
+                />
+
+                <Text style={styles.categoryText}>{item.nome}</Text>
+              </View>
+            ))}
+          </ScrollView>
+        </View>
+
+        <View style={styles.navigationArea}>
+          <Link href="/ListaAtracoes" asChild>
+            <Pressable style={styles.button}>
+              <Text style={styles.buttonText}>Explorar atrações</Text>
+            </Pressable>
+          </Link>
+        </View>
 
       </SafeAreaView>
     </ImageBackground>
@@ -38,54 +83,69 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height:"100%"
-  },
-  overlay: {
-    flex: 1,
-    backgroundColor: "rgba(0,0,0,0.5)",
-    paddingHorizontal: 20,
-    justifyContent: "space-between", 
-    paddingBottom: 30,
-    overflow: "hidden"
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "#fff",
-    textAlign: "center",
-    marginTop: 10,
-  },
-  description: {
-    fontSize: 16,
-    color: "#ddd",
-    textAlign: "center",
-    marginVertical: 10,
-  },
-  carouselContainer: {
-    height: 200,
-    alignSelf: "center",
   },
 
-  image: {
-    width: width * 1,
-    height: 200,
-    borderRadius: 15,
-    marginRight: 15,
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.6)",
+    paddingHorizontal: 20,
+    justifyContent: "space-between",
+    paddingBottom: 30,
   },
+
+  title: {
+    fontSize: 32,
+    fontWeight: "800",
+    color: "#fff",
+    textAlign: "center",
+    marginTop: 20,
+  },
+
+  description: {
+    fontSize: 16,
+    color: "#E2E8F0",
+    textAlign: "center",
+    marginTop: 10,
+    lineHeight: 22,
+  },
+
+  categoriesContainer: {
+    marginTop: 10,
+  },
+
+  categoriesContent: {
+    paddingRight: 10,
+  },
+
+  category: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "rgba(255,255,255,0.15)",
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 20,
+    marginRight: 10,
+  },
+
+  categoryText: {
+    color: "#fff",
+    fontWeight: "600",
+  },
+
   navigationArea: {
     alignItems: "center",
   },
+
   button: {
-    backgroundColor: "#6200ee",
-    color: "#fff",
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    fontSize: 16,
-    fontWeight: "bold",
-    overflow: "hidden",
+    backgroundColor: "#2563EB",
+    paddingVertical: 14,
+    paddingHorizontal: 40,
+    borderRadius: 14,
   },
-  link: {
-    color: 'white',
-  }
+
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "700",
+  },
 });
