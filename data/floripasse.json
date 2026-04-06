@@ -77,7 +77,7 @@
         "whatsapp": ""
       },
       "reserva": {
-        "obrigatoria": true,
+        "obrigatoria": false,
         "url": ""
       }
     },
