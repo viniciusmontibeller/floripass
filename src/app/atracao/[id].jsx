@@ -11,6 +11,7 @@ import FavoriteButton from '../../components/ui/FavoriteButton';
 import { useState } from 'react'
 import { useFocusEffect } from 'expo-router';
 import { pegaFavoritos, hablitarFavoritos } from '../../utils/favoritos';
+import { formatarWhatsappParaLink } from '../../utils/whatsFormatado'
 
 export default function AtracaoDetalhes() {
     const [favorito, setFavorito] = useState(false);
@@ -114,10 +115,11 @@ export default function AtracaoDetalhes() {
                     {atracao.horariosFuncionamento.map((horario, index) => (
                         <View key={index} style={styles.infoRow}>
                             <Text style={styles.infoLabel}>
-                            {horario.dias.join(', ')}
+                                De {horario.dias[0]} a {horario.dias[horario.dias.length - 1]}
+                                {/* {horario.dias.join(', ')} */}
                             </Text>
                             <Text style={styles.infoValue}>
-                            {horario.abre} às {horario.fecha}
+                                {horario.abre} às {horario.fecha}
                             </Text>
                         </View>
                     ))}
@@ -178,7 +180,7 @@ export default function AtracaoDetalhes() {
                     {atracao.contato.whatsapp &&
                         <Pressable
                             style={styles.contactRow}
-                            onPress={() => Linking.openURL(`https://wa.me/${atracao.contato.whatsapp}`)}
+                            onPress={() => Linking.openURL(`https://wa.me/${formatarWhatsappParaLink(atracao.contato.whatsapp)}`)}
                         >
                             <View style={styles.contactIcon}>
                                 <Ionicons name="logo-whatsapp" size={18} color="#2563EB" />
@@ -201,7 +203,7 @@ export default function AtracaoDetalhes() {
                             type='primary'
                             onPress={() => atracao.reserva.url
                                 ? Linking.openURL(atracao.reserva.url)
-                                : Linking.openURL(`https://wa.me/${atracao.contato.whatsapp}`)}
+                                : Linking.openURL(`https://wa.me/${formatarWhatsappParaLink(atracao.contato.whatsapp)}`)}
                         />
                     </View>
                 )}

@@ -6,7 +6,7 @@ export default function AtracaoCard({ atracao, isFavorite, onToggleFavorite }) {
     const { id, nome, bairro, thumbnail } = atracao
     
     return (
-        <View style={styles.contianer}>
+        <View style={styles.container}>
             <Link
                 asChild
                 href={`/atracao/${id}`}
@@ -21,9 +21,13 @@ export default function AtracaoCard({ atracao, isFavorite, onToggleFavorite }) {
                             position: 'relative'
                         }}
                     >
-                        <View style={styles.textArea}>
-                            <Text style={styles.text}>{nome}</Text>
-                            <Text style={styles.text}>{bairro}</Text>
+                        <View style={styles.overlay}>
+                            <Text style={styles.title} numberOfLines={2}>
+                                {nome}
+                            </Text>
+                            <View style={styles.bairroBadge}>
+                                <Text style={styles.bairroBadgeText}>{bairro}</Text>
+                            </View>
                         </View>
                         
                         <FavoriteButton
@@ -39,16 +43,38 @@ export default function AtracaoCard({ atracao, isFavorite, onToggleFavorite }) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 16,
+        marginBottom: 16,
+    },  
     card: {
-        margin: 10,
         borderRadius: 10,
-        overflow: 'hidden'
-    },
-    textArea: {
-        backgroundColor: 'rgba(0, 0, 0, 0.4)',
-        padding: 15,
+        overflow: 'hidden',
     },
     text: {
         color: 'white'
-    }
+    },
+    overlay: {
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        padding: 15,
+    },
+    bairroBadge: {
+        alignSelf: 'flex-start',
+        backgroundColor: 'rgba(255,255,255,0.3)',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 999,
+    },
+    bairroBadgeText: {
+        color: '#FFFFFF',
+        fontSize: 12,
+        fontWeight: '600',
+    },
+    title: {
+        color: '#FFFFFF',
+        fontSize: 17,
+        fontWeight: '700',
+        lineHeight: 22,
+        marginBottom: 4,
+    },
 })
